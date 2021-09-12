@@ -45,7 +45,7 @@ lmc.minimizeToTray = true
 --Start Script
 sendToAHK = function (key)
       --print('It was assigned string:    ' .. key)
-       local file = io.open("PATH\\keypressed.txt", "w") -- writing this string to a text file on disk is probably NOT the best method. Feel free to program something better!
+       local file = io.open("PATH\\MACROKEYBOARD\\keypressed.txt", "w") -- writing this string to a text file on disk is probably NOT the best method. Feel free to program something better!
       --If you didn't put your AutoHotKey scripts into C:/AHK, Make sure to substitute the path that leads to your own "keypressed.txt" file, using the double backslashes.
 	  --print("we are inside the text file")
       file:write(key)
@@ -55,7 +55,7 @@ sendToAHK = function (key)
 
       stringabc = 'abcdefghijklmnopqrstuvwxyz1234567890'
       if string.match(stringabc, key) then
-         local myfile = 'PATH\\AllText.txt'
+         local myfile = 'PATH\\MACROKEYBOARD\\AllText.txt'
          local file2 = io.open(myfile, "a")
          file2:write(key)
          file2:flush() --"flush" means "save." Lol.
@@ -65,7 +65,7 @@ sendToAHK = function (key)
       stringOneTwoThree =  '1234567890'
       EvaluateKeysNeeded = {"semicolon","singlequote","period","1","0","2","3","4","5","6","7","8","9","minus","equals","leftbracket","rightbracket","backslash"}
       if has_value(EvaluateKeysNeeded, key) then
-         GetMode = io.open("PATH\\Mode1.txt", "r")
+         GetMode = io.open("PATH\\MACROKEYBOARD\\Mode1.txt", "r")
          io.input(GetMode)
          TheObtainedMode = io.read()
          if TheObtainedMode == 'Evaluate!' then
